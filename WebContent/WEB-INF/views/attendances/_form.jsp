@@ -10,6 +10,7 @@
 
     </div>
 </c:if>
+
 <label for="attendance_date">日付</label><br />
 <input type="date" name="attendance_date" value="<fmt:formatDate value='${Attendance.attendance_date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
@@ -31,7 +32,7 @@
 <br /><br />
 
 <label for="name">稼働時間</label><br />
-<c:out value="${Attendance.working_hour}" />
+<input type="text" name="working_hour" value="${Attendance.working_hour}" />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
