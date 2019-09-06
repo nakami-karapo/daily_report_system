@@ -12,7 +12,7 @@
 </c:if>
 
 <label for="attendance_date">日付</label><br />
-<input type="date" name="attendance_date" value="<fmt:formatDate value='${Attendance.attendance_date}' pattern='yyyy-MM-dd' />" />
+<input type="date" name="attendance_date" value="<fmt:formatDate value='${attendance.attendance_date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
 <label for="name">氏名</label><br />
@@ -20,19 +20,15 @@
 <br /><br />
 
 <label for="clockIn_time">出社時刻</label><br />
-<input type="text" name="clockIn_time" value="${Attendance.clockIn_time}" />
+<input type="text" name="clockIn_time" value="<fmt:formatNumber value='${attendance.clockIn_time}' pattern='0000' />" />
 <br /><br />
 
 <label for="clockOut_time">退社時刻</label><br />
-<input type="text" name="clockOut_time" value="${Attendance.clockOut_time}" />
+<input type="text" name="clockOut_time" value="<fmt:formatNumber value='${attendance.clockOut_time}' pattern='0000' />" />
 <br /><br />
 
 <label for="break_hour">休憩時間</label><br />
-<input type="text" name="break_hour" value="${Attendance.break_hour}" />
-<br /><br />
-
-<label for="name">稼働時間</label><br />
-<input type="text" name="working_hour" value="${Attendance.working_hour}" />
+<input type="text" name="break_hour" value="<fmt:formatNumber value='${attendance.break_hour}' pattern='0000' />" />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />

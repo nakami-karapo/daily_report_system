@@ -20,25 +20,25 @@
                         <tr>
                             <th>出社時刻</th>
                             <td>
-                                <pre><c:out value="${attendance.clockIn_time}" /></pre>
+                                <fmt:formatNumber value='${attendance.clockIn_time}' pattern='0000' />
                             </td>
                         </tr>
                         <tr>
                             <th>退社時刻</th>
                             <td>
-                                <pre><c:out value="${attendance.clockOut_time}" /></pre>
+                                <fmt:formatNumber value='${attendance.clockOut_time}' pattern='0000' />
                             </td>
                         </tr>
                         <tr>
                             <th>休憩時間</th>
                             <td>
-                                <pre><c:out value="${attendance.break_hour}" /></pre>
+                                <fmt:formatNumber value='${attendance.break_hour}' pattern='0000' />
                             </td>
                         </tr>
                         <tr>
                             <th>稼働時間</th>
                             <td>
-                                <pre><c:out value="${attendance.working_hour}" /></pre>
+                                <fmt:formatNumber value='${attendance.working_hour}' pattern='0000' />
                             </td>
                         </tr>
                         <tr>

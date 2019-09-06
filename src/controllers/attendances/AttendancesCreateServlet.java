@@ -55,7 +55,17 @@ public class AttendancesCreateServlet extends HttpServlet {
             r.setClockIn_time(Integer.parseInt(request.getParameter("clockIn_time")));
             r.setClockOut_time(Integer.parseInt(request.getParameter("clockOut_time")));
             r.setBreak_hour(Integer.parseInt(request.getParameter("break_hour")));
-            r.setWorking_hour(Integer.parseInt(request.getParameter("working_hour")));
+ //           r.setWorking_hour(Integer.parseInt(request.getParameter("working_hour")));
+
+            Integer calClockIn_hour  = Integer.parseInt(request.getParameter("clockIn_time")) / 100 * 60
+                                       + Integer.parseInt(request.getParameter("clockIn_time")) % 100;
+            Integer calClockOut_hour = Integer.parseInt(request.getParameter("clockOut_time")) / 100 * 60
+                                       + Integer.parseInt(request.getParameter("clockOut_time")) % 100;
+            Integer calBreak_hour    = Integer.parseInt(request.getParameter("break_hour")) / 100 * 60
+                                       + Integer.parseInt(request.getParameter("break_hour")) % 100;
+            Integer calWorking_hour = (calClockOut_hour - calClockIn_hour - calBreak_hour) / 60 * 100
+                                      + (calClockOut_hour - calClockIn_hour - calBreak_hour) % 60;
+            r.setWorking_hour(calWorking_hour);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);

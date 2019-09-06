@@ -24,10 +24,10 @@
                     <tr class="row${status.count % 2}">
                         <td class="attendance_name"><c:out value="${attendance.employee.name}" /></td>
                         <td class="attendance_date"><fmt:formatDate value='${attendance.attendance_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="attendance_clockIn_time">${attendance.clockIn_time}</td>
-                        <td class="attendance_clockOut_time">${attendance.clockOut_time}</td>
-                        <td class="attendance_break_hour">${attendance.break_hour}</td>
-                        <td class="attendance_working_hour">${attendance.working_hour}</td>
+                        <td class="attendance_clockIn_time"><fmt:formatNumber value='${attendance.clockIn_time}' pattern='0000' /></td>
+                        <td class="attendance_clockOut_time"><fmt:formatNumber value='${attendance.clockOut_time}' pattern='0000' /></td>
+                        <td class="attendance_break_hour"><fmt:formatNumber value='${attendance.break_hour}' pattern='0000' /></td>
+                        <td class="attendance_working_hour"><fmt:formatNumber value='${attendance.working_hour}' pattern='0000' /></td>
                         <td class="attendance_action"><a href="<c:url value='/attendances/show?id=${attendance.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>

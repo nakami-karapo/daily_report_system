@@ -49,7 +49,7 @@ public class AttendancesDestroyServlet extends HttpServlet {
             request.getSession().removeAttribute("attendance_id");
 
             // indexページへリダイレクト
-            response.sendRedirect(request.getContextPath() + "/index");
+            response.sendRedirect(request.getContextPath() + "/attendances/index");
         }
     }
 
