@@ -57,7 +57,7 @@
                 </table>
 
                 <c:if test="${sessionScope.login_employee.id == attendance.employee.id}">
-                    <p><a href="<c:url value='/attendances/edit?id=${attendance.id}' />">この日報を編集する</a></p>
+                    <p><a href="<c:url value='/attendances/edit?id=${attendance.id}&attendance_date=${attendance_date}' />">この出退勤を編集する</a></p>
                 </c:if>
             </c:when>
             <c:otherwise>

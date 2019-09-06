@@ -44,6 +44,7 @@ public class AttendancesEditServlet extends HttpServlet {
             request.setAttribute("attendance", r);
             request.setAttribute("_token", request.getSession().getId());
             request.getSession().setAttribute("attendance_id", r.getId());
+            request.getSession().setAttribute("attendance_date", r.getAttendance_date());
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/attendances/edit.jsp");

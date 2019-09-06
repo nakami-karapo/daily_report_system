@@ -26,11 +26,11 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMyAllAttendances",
-            query = "SELECT r FROM Attendance AS r WHERE r.employee = :employee ORDER BY r.id DESC"
+            query = "SELECT r FROM Attendance AS r WHERE r.employee = :employee and r.attendance_date = :attendance_date ORDER BY r.id DESC"
             ),
     @NamedQuery(
             name = "getMyAttendancesCount",
-            query = "SELECT COUNT(r) FROM Attendance AS r WHERE r.employee = :employee"
+            query = "SELECT COUNT(r) FROM Attendance AS r WHERE r.employee = :employee and r.attendance_date = :attendance_date"
             )
 })
 @Entity
